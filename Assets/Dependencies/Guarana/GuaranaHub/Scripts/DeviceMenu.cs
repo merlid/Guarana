@@ -16,7 +16,6 @@ public class DeviceMenu : MonoBehaviour{
 	private GameObject buttonsContainer;
 
 	private DeviceManager deviceManager;
-	public Dictionary<System.Uri, string> registeredDevices;
 
 	async private void Start(){
 
@@ -26,14 +25,18 @@ public class DeviceMenu : MonoBehaviour{
 
 		await deviceManager.RegisterDevicesSSDP();
 
-		CanvasConsole.PrintOutput(deviceManager.registeredDevices.Count + "");
+		CanvasConsole.PrintOutput(deviceManager.registeredProviders.Count + "");
 
-		foreach (KeyValuePair<System.Uri, string> deviceEntry in deviceManager.registeredDevices){
+		foreach (KeyValuePair<System.Uri, ContentProviderData> providerEntry in deviceManager.registeredProviders){
 			GameObject button = Instantiate(buttonPrefab, buttonsContainer.transform);
 
-			button.name = deviceEntry.Key.ToString();
+			button.name = providerEntry.Key.ToString();
 
-			button.GetComponentInChildren<TextMeshProUGUI>().text = deviceEntry.Value;
+			if(providerEntry.Value.Nickname != "UNKNOWN"){
+				button.GetComponentInChildren<TextMeshProUGUI>().text = providerEntry.Value.Nickname;
+			}else{
+				button.GetComponentInChildren<TextMeshProUGUI>().text = providerEntry.Value.Usn;
+			}
 		}
 	}
 

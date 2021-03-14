@@ -20,4 +20,8 @@ public class CanvasConsole : MonoBehaviour
 		if (instance != null) instance.outputTextbox.text = text;
 	}
 
+	public static void WriteWarning(object message){
+		Debug.LogWarning(message);
+	}
+
 }
