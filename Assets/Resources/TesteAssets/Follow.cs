@@ -11,7 +11,7 @@ public class Follow : MonoBehaviour
 
     private float tParam;
 
-    private Vector2 objectPosition;
+    private Vector3 objectPosition;
 
     public float speedModifier;
 
@@ -39,10 +39,10 @@ public class Follow : MonoBehaviour
     {
         coroutineAllowed = false;
 
-        Vector2 p0 = routes[routeNum].GetChild(0).position;
-        Vector2 p1 = routes[routeNum].GetChild(1).position;
-        Vector2 p2 = routes[routeNum].GetChild(2).position;
-        Vector2 p3 = routes[routeNum].GetChild(3).position;
+        Vector3 p0 = routes[routeNum].GetChild(0).position;
+        Vector3 p1 = routes[routeNum].GetChild(1).position;
+        Vector3 p2 = routes[routeNum].GetChild(2).position;
+        Vector3 p3 = routes[routeNum].GetChild(3).position;
 
         while (tParam < 1)
         {
