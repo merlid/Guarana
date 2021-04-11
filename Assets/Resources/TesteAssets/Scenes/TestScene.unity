@@ -525,9 +525,8 @@ GameObject:
   - component: {fileID: 839800590}
   - component: {fileID: 839800589}
   - component: {fileID: 839800588}
-  - component: {fileID: 839800587}
-  - component: {fileID: 839800592}
   - component: {fileID: 839800593}
+  - component: {fileID: 839800592}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -535,24 +534,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &839800587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839800586}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c67498ddea14a334b85228ec97b5168b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 755013481}
-  - {fileID: 781948959}
-  - {fileID: 1522421258}
-  - {fileID: 566265108}
-  speedModifier: 0.3
 --- !u!65 &839800588
 BoxCollider:
   m_ObjectHideFlags: 0
