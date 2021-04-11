@@ -44,6 +44,14 @@ public class Follow : MonoBehaviour
         Vector3 p2 = routes[routeNum].GetChild(2).position;
         Vector3 p3 = routes[routeNum].GetChild(3).position;
 
+        yield return new WaitForSeconds(1);
+
+
+        if (routeToGo == 1 || routeToGo == 0)
+        {
+            yield return new WaitForSeconds(3);
+        }
+
         while (tParam < 1)
         {
             tParam += Time.deltaTime * speedModifier;
@@ -57,14 +65,7 @@ public class Follow : MonoBehaviour
         tParam = 0f;
 
         routeToGo += 1;
-
-        if (routeToGo == 1)
-        {
-           yield return new WaitForSeconds(5);
-        } 
-
-
-        
+                        
         if (routeToGo > routes.Length - 1)
         {
             routeToGo = 0;
